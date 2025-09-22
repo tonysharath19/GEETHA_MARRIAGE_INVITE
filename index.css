@@ -21,7 +21,7 @@ body.menu-open .page-wrapper {
 
 /* Header Styles */
 .header {
-    background-color: #e91e63;
+    background-color: #f46a98;
     position: fixed;
     top: 0;
     left: 0;
@@ -154,7 +154,7 @@ body.menu-open .page-wrapper {
     text-decoration: none;
     color: #ffffff;
     background-color: #e91e63;
-    border: 2px solid #c77dff;
+    border: 2px solid #ffffff;
     border-radius: 10px;
     transition: all 0.3s ease;
     font-weight: 500;
@@ -176,7 +176,7 @@ body.menu-open .page-wrapper {
 
 /* Footer */
 .footer {
-    background-color: #e91e63;
+    background-color: #f46a98;
     color: #ffffff;
     text-align: center;
     padding: 2rem;
