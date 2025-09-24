@@ -200,11 +200,19 @@ body.menu-open .page-wrapper {
 /* Responsive Design */
 @media (max-width: 768px) {
     .header-container {
-        padding: 1rem;
+        padding: 0.5rem 1rem;
     }
 
     .header-title h1 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+    }
+
+    .footer {
+        padding: 1rem;
+    }
+
+    .footer p {
+        font-size: 0.9rem;
     }
 
     .side-menu {
