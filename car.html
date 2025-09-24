@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Save the Date Animation</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f46a98;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end; /* Start from bottom */
+    }
+
+    #image {
+      position: relative;
+      width: 100vw;  /* Fill horizontally */
+      height: 100vh; /* Fill vertically */
+      object-fit: cover; /* Maintain aspect ratio, cover entire screen */
+      transform: translateY(100%); /* Start below screen */
+    }
+  </style>
+</head>
+<body>
+  <img id="image" src="Media/Images/ENG-P-79.jpeg" alt="Save the Date">
+
+  <script>
+    const img = document.getElementById("image");
+
+    // Animate once image is loaded
+    if (img.complete) {
+      animateImage();
+    } else {
+      img.onload = animateImage;
+    }
+
+    function animateImage() {
+      const screenHeight = window.innerHeight;
+
+      // Distance to move: from below screen (100%) to fully visible (0)
+      const startY = screenHeight;
+      const endY = 0;
+
+      const speed = 300; // pixels per second (adjust for faster/slower)
+      const distance = startY - endY;
+      const duration = distance / speed;
+
+      // Apply transition
+      img.style.transition = `transform ${duration}s linear`;
+
+      // Trigger animation
+      requestAnimationFrame(() => {
+        img.style.transform = `translateY(${endY}px)`; // Final position
+      });
+    }
+  </script>
+</body>
+</html>

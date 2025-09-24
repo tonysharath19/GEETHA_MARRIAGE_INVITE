@@ -99,3 +99,21 @@ window.addEventListener('scroll', function(){
         header.style.background = '#e91e63';
     }
 });
+
+// Video playback on tap invite
+document.getElementById('tapInvite').addEventListener('click', function() {
+    const video = document.getElementById('carVideo');
+    video.style.display = 'block';
+    video.play();
+    this.style.display = 'none'; // Hide the text after click
+
+    // After 2 seconds, switch to geetha.mp4 and autoplay without loop
+    setTimeout(() => {
+        video.src = 'Media/Videos/geetha.mp4';
+        video.loop = false;
+        video.play();
+    }, 6000);
+});
+
+
+

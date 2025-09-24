@@ -6,9 +6,15 @@
   <title>Ashok & Geetha</title>
   <link rel="stylesheet" href="index.css" />
 </head>
-<body>
+<body style="background-image: url('Media/Images/CORP-P-72.jpeg'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed;">
   <!-- Overlay -->
   <div id="overlay" class="overlay"></div>
+
+  <!-- Video element -->
+  <video id="carVideo" src="Media/Videos/car.webm" style="display:none; position: fixed; top: 70px; bottom: 80px; left: 0; right: 0; width: 100%; height: calc(100vh - 150px); object-fit: cover; z-index: 1;" controls controlslist="nodownload noremoteplayback"></video>
+
+  <!-- Tap to view invite text -->
+  <div id="tapInvite" class="tap-invite">Tap here to view invite</div>
 
   <!-- Side menu -->
   <nav id="sideMenu" class="side-menu">
@@ -44,9 +50,9 @@
     </header>
 
     <!-- Main content -->
-    <main class="main-content">
-      
+    
     </main>
+    
 
     <!-- Footer -->
     <footer class="footer">

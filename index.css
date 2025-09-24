@@ -233,3 +233,26 @@ body.menu-open .page-wrapper {
 .overlay.active {
     display: block;
 }
+
+/* Tap to view invite text */
+.tap-invite {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ad1457; /* Dark pink */
+    text-align: center;
+    cursor: pointer;
+    z-index: 1002;
+    text-shadow: 0 0 5px rgba(173, 20, 87, 0.8), 0 0 10px rgba(173, 20, 87, 0.6), 0 0 15px rgba(173, 20, 87, 0.4);
+    transition: all 0.3s ease;
+}
+
+.tap-invite:hover {
+    color: #e91e63;
+    text-shadow: 0 0 10px rgba(233, 30, 99, 1), 0 0 20px rgba(233, 30, 99, 0.8), 0 0 30px rgba(233, 30, 99, 0.6);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
