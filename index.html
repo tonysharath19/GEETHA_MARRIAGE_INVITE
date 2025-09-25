@@ -1,20 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ashok & Geetha</title>
-  <link rel="stylesheet" href="index.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hurricane&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
 </head>
-<body style="background-image: url('Media/Images/CORP-P-72.jpeg'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed;">
-  <!-- Overlay -->
-  <div id="overlay" class="overlay"></div>
-
-  <!-- Video element -->
-  <video id="carVideo" src="Media/Videos/car.webm" style="display:none; position: fixed; top: 70px; bottom: 80px; left: 0; right: 0; width: 100%; height: calc(100vh - 150px); object-fit: cover; z-index: 1;" controls controlslist="nodownload noremoteplayback"></video>
+<body style="margin:0; padding:0;">
 
   <!-- Tap to view invite text -->
-  <div id="tapInvite" class="tap-invite">Tap here to view invite</div>
+  <div id="tapInvite" class="tap-invite hurricane-regular">Tap here to view Invite</div>
+
+  <!-- Main content wrapper -->
+  <div class="page-wrapper">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-container">
+        <div id="hamburgerMenu" class="hamburger-menu" tabindex="0">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="header-title">
+          <h1 class="italianno-regular">Ashok & Geetha</h1>
+        </div>
+        <div class="home-btn">
+          <a href="#home" class="home-button">Home</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Video container -->
+    <div class="video-container">
+      <video id="carVideo" src="Media/Videos/geetha.mp4" muted controls controlslist="nodownload noremoteplayback" style="display:none;"></video>
+    </div>
+
+    <!-- Main content -->
+    <main class="main-content">
+      <!-- Your page content here -->
+    </main>
+  </div>
+
+  <!-- Overlay for side menu -->
+  <div id="overlay" class="overlay"></div>
 
   <!-- Side menu -->
   <nav id="sideMenu" class="side-menu">
@@ -29,39 +61,6 @@
       </ul>
     </div>
   </nav>
-
-  <!-- Page content wrapper (gets blurred) -->
-  <div class="page-wrapper">
-    <!-- Header -->
-    <header class="header">
-      <div class="header-container">
-        <div id="hamburgerMenu" class="hamburger-menu" tabindex="0">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="header-title">
-          <h1>Ashok & Geetha</h1>
-        </div>
-        <div class="home-btn">
-          <a href="#home" class="home-button">Home</a>
-        </div>
-      </div>
-    </header>
-
-    <!-- Main content -->
-    
-    </main>
-    
-
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-container">
-        <p>&copy; 2025 All rights reserved | Raaya</p>
-      </div>
-    </footer>
-  </div>
-
   <script src="index.js"></script>
 </body>
 </html>

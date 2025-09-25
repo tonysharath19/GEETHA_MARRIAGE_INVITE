@@ -1,33 +1,59 @@
-/* Reset and Base Styles */
+/* ================= RESET & BASE STYLES ================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
+.italianno-regular {
+  font-family: "Italianno", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.hurricane-regular {
+  font-family: "Hurricane", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body, html {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: #ffffff;
+    height: 100%;
+    overflow-x: hidden;
     transition: filter 0.3s ease;
 }
 
-/* Blur page wrapper only */
+/* ================= PAGE WRAPPER ================= */
+.page-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ================= BODY BLUR WHEN MENU OPEN ================= */
 body.menu-open .page-wrapper {
     filter: blur(8px);
     transition: filter 0.3s ease;
 }
 
-/* Header Styles */
+body.menu-open .tap-invite {
+    display: none;
+}
+
+/* ================= HEADER ================= */
 .header {
-    background-color: #f46a98;
+    background-color: #e75485;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .header-container {
@@ -40,14 +66,14 @@ body.menu-open .page-wrapper {
 }
 
 .header-title h1 {
-    color: #ffffff;
-    font-size: 1.8rem;
+    color: #fff;
+    font-size: 2.5rem;
     font-weight: bold;
-    text-align: center;
     flex-grow: 1;
+    text-align: center;
 }
 
-/* Hamburger Menu */
+/* ================= HAMBURGER ================= */
 .hamburger-menu {
     display: flex;
     flex-direction: column;
@@ -57,51 +83,39 @@ body.menu-open .page-wrapper {
     transition: background-color 0.3s ease;
 }
 
-.hamburger-menu:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
 .hamburger-menu span {
     width: 25px;
     height: 3px;
-    background-color: #ffffff;
+    background-color: #fff;
     margin: 3px 0;
-    transition: 0.3s;
     border-radius: 2px;
+    transition: 0.3s;
 }
 
-/* Home Button */
-.home-btn {
-    display: flex;
-    align-items: center;
-}
-
+/* ================= HOME BUTTON ================= */
 .home-button {
-    color: #ffffff;
+    color: #fff;
     text-decoration: none;
     padding: 0.5rem 1rem;
-    border: 2px solid #ffffff;
+    border: 2px solid #fff;
     border-radius: 5px;
-    transition: all 0.3s ease;
     font-weight: 500;
+    transition: all 0.3s ease;
 }
 
 .home-button:hover {
-    background-color: #ffffff;
+    background-color: #fff;
     color: #e91e63;
 }
 
-/* Side Menu */
+/* ================= SIDE MENU ================= */
 .side-menu {
     position: fixed;
     top: 0;
     left: -50%;
     width: 50%;
     height: 100vh;
-    background: url('Media/Images/CORP-P-96.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: url('Media/Images/CORP-P-96.png') center/cover no-repeat;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
     transition: left 0.3s ease;
     z-index: 1001;
@@ -168,65 +182,57 @@ body.menu-open .page-wrapper {
     box-shadow: 0 5px 15px rgba(199, 125, 255, 0.3);
 }
 
-/* Main Content */
-.main-content {
-    margin-top: 80px;
-    min-height: calc(100vh - 160px);
-}
-
-/* Footer */
-.footer {
-    background-color: #f46a98;
-    color: #ffffff;
-    text-align: center;
-    padding: 2rem;
+/* ================= VIDEO CONTAINER ================= */
+.video-container {
     position: fixed;
-    bottom: 0;
+    top: 0;
     left: 0;
-    right: 0;
-    z-index: 1000;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('Media/Images/CORP-P-72.jpeg');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    transition: background-image 0.5s ease;
 }
 
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
+.video-container.active {
+    background-image: none;
 }
 
-.footer p {
-    font-size: 1rem;
-    font-weight: 500;
+.video-container video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    display: block;
+    z-index: 2;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .header-container {
-        padding: 0.5rem 1rem;
-    }
-
-    .header-title h1 {
-        font-size: 1.2rem;
-    }
-
-    .footer {
-        padding: 1rem;
-    }
-
-    .footer p {
-        font-size: 0.9rem;
-    }
-
-    .side-menu {
-        width: 70%;
-        left: -70%;
-    }
-
-    .home-button {
-        padding: 0.3rem 0.8rem;
-        font-size: 0.9rem;
-    }
+/* ================= TAP INVITE ================= */
+.tap-invite {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ad1457;
+    text-align: center;
+    cursor: pointer;
+    z-index: 1002;
+    text-shadow: 0 0 5px rgba(255,255,255,0.8);
+    transition: all 0.3s ease;
 }
 
-/* Overlay for mobile menu */
+.tap-invite:hover {
+    color: #e91e63;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* ================= OVERLAY ================= */
 .overlay {
     position: fixed;
     top: 0;
@@ -242,25 +248,32 @@ body.menu-open .page-wrapper {
     display: block;
 }
 
-/* Tap to view invite text */
-.tap-invite {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 2rem;
-    font-weight: bold;
-    color: #ad1457; /* Dark pink */
-    text-align: center;
-    cursor: pointer;
-    z-index: 1002;
-    text-shadow: 0 0 5px rgba(173, 20, 87, 0.8), 0 0 10px rgba(173, 20, 87, 0.6), 0 0 15px rgba(173, 20, 87, 0.4);
-    transition: all 0.3s ease;
+/* ================= MAIN CONTENT ================= */
+.main-content {
+    display: none; /* no main content for full-screen mobile video */
 }
 
-.tap-invite:hover {
-    color: #e91e63;
-    text-shadow: 0 0 10px rgba(233, 30, 99, 1), 0 0 20px rgba(233, 30, 99, 0.8), 0 0 30px rgba(233, 30, 99, 0.6);
-    transform: translate(-50%, -50%) scale(1.1);
-}
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .header-container {
+        padding: 0.5rem 1rem;
+    }
 
+    .header-title h1 {
+        font-size: 2.5rem;
+    }
+
+    .home-button {
+        padding: 0.3rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .tap-invite {
+        font-size: 2.5rem;
+    }
+
+    .side-menu {
+        width: 70%;
+        left: -70%;
+    }
+}
