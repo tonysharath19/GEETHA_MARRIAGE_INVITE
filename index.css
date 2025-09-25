@@ -200,15 +200,29 @@ body.menu-open .tap-invite {
 }
 
 .video-container.active {
-    background-image: none;
+    background-image: url('Media/Images/CORP-P-72.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-color: transparent;
 }
 
-.video-container video {
-    width: 100vw;
+.reels-container {
+    position: relative;
+    width: 56.25vh; /* 9/16 * 100vh for 9:16 aspect ratio */
     height: 100vh;
-    object-fit: cover;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reels-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     display: block;
-    z-index: 2;
 }
 
 /* ================= TAP INVITE ================= */
@@ -253,6 +267,29 @@ body.menu-open .tap-invite {
     display: none; /* no main content for full-screen mobile video */
 }
 
+/* ================= FOOTER ================= */
+.footer {
+    background-color: #e75485;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 7rem;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+}
+
+.footer p {
+    margin: 0;
+}
+
 /* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
     .header-container {
@@ -275,5 +312,11 @@ body.menu-open .tap-invite {
     .side-menu {
         width: 70%;
         left: -70%;
+    }
+
+    .footer {
+        font-size: 1rem;
+        padding: 0;
+        height: 4.5rem;
     }
 }
