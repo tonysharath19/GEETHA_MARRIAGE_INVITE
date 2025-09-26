@@ -9,6 +9,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const video = document.getElementById('carVideo');
     const tapInvite = document.getElementById('tapInvite');
 
+    // Prevent downloads: Global event listeners
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.addEventListener('dragstart', e => e.preventDefault());
+
+    // Prevent long press on mobile
+    let longPressTimer;
+    document.addEventListener('touchstart', function(e) {
+        longPressTimer = setTimeout(function() {
+            e.preventDefault();
+        }, 500);
+    });
+    document.addEventListener('touchend', function() {
+        clearTimeout(longPressTimer);
+    });
+    document.addEventListener('touchmove', function() {
+        clearTimeout(longPressTimer);
+    });
+
     /* ================= HAMBURGER ANIMATION ================= */
     function animateHamburger(isOpen){
         const spans = hamburgerMenu.querySelectorAll('span');

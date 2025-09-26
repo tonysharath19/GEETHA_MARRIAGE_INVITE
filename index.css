@@ -25,6 +25,10 @@ body, html {
     height: 100%;
     overflow-x: hidden;
     transition: filter 0.3s ease;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 /* ================= PAGE WRAPPER ================= */
@@ -319,4 +323,9 @@ body.menu-open .tap-invite {
         padding: 0;
         height: 4.5rem;
     }
+}
+
+/* ================= PREVENT DOWNLOADS ================= */
+img, video {
+    -webkit-user-drag: none;
 }
